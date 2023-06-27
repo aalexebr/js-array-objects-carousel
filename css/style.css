@@ -41,27 +41,27 @@
     left: 50%;
     transform: translate(-50% , 0);
 }
-/* .box{
+.box{
     position: absolute;
     top: 0;
     left: 0;
     height: 300px;
     width: 500px;
     z-index: 1;
-   background-color: blue;
-   
-} */
+    background-color: blue;
+    display: none;
+}
 img{
     object-fit: cover;
     width: 100%;
     height: 100%;
-    display: none;
+    /* display: none;
     position: absolute;
     top: 0;
     left: 0;
     height: 300px;
     width: 500px;
-    z-index: 1;
+    z-index: 1; */
 }
 .display{
     display: block;
@@ -69,3 +69,8 @@ img{
 /* .displayNone{
     visibility: hidden;
 } */
+.appendix{
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
