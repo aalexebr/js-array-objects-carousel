@@ -36,3 +36,17 @@ for(let i=0; i<images.length; i++){
                 </div>`;
     document.querySelector('.img-position').innerHTML += box            
 };
+const allBoxes = document.querySelectorAll('.box')
+allBoxes[0].classList.add('display')
+const down = document.getElementById('down');
+let count = 0
+down.addEventListener('click', function(){
+    if(count < images.length-1){
+        allBoxes[count].classList.remove('display')
+        count++
+        allBoxes[count].classList.add('display')
+    }
+    else if(count=images.length){
+        count = 0
+    }
+});
