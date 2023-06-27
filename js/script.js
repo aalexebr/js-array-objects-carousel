@@ -41,14 +41,32 @@ allBoxes[0].classList.add('display')
 const down = document.getElementById('down');
 let count = 0
 down.addEventListener('click', function(){
+    
     if(count < images.length-1){
         allBoxes[count].classList.remove('display')
         count++
         allBoxes[count].classList.add('display')
     }
-    else if(count = images.length){
+    else if(count == images.length){
         allBoxes[images.length-1].classList.remove('display')
         count = 0
         allBoxes[count].classList.add('display')
     }
+});
+
+const up = document.getElementById('up');
+
+up.addEventListener('click', function(){
+    
+    if(count < 0 || count == 0){
+        allBoxes[0].classList.remove('display')
+        count = images.length-1
+        allBoxes[images.length-1].classList.add('display')
+    }
+    else if(count > 0){
+        allBoxes[count].classList.remove('display')
+        count--
+        allBoxes[count].classList.add('display')
+    }
+
 });
