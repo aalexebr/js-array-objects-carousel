@@ -46,13 +46,17 @@ down.addEventListener('click', function(){
     
     if(count < images.length-1){
         allBoxes[count].classList.remove('display')
+        allPreviews[count].classList.remove('opacity')
         count++
         allBoxes[count].classList.add('display')
+        allPreviews[count].classList.add('opacity')
     }
     else if(count == images.length-1){
         allBoxes[images.length-1].classList.remove('display')
+        allPreviews[images.length-1].classList.remove('opacity')
         count = 0
         allBoxes[count].classList.add('display')
+        allPreviews[count].classList.add('opacity')
     }
     console.log(count)
 });
@@ -63,13 +67,31 @@ up.addEventListener('click', function(){
     
     if(count < 0 || count == 0){
         allBoxes[0].classList.remove('display')
+        allPreviews[0].classList.remove('opacity')
         count = images.length-1
         allBoxes[images.length-1].classList.add('display')
+        allPreviews[images.length-1].classList.add('opacity')
     }
     else if(count > 0){
         allBoxes[count].classList.remove('display')
+        allPreviews[count].classList.remove('opacity')
         count--
         allBoxes[count].classList.add('display')
+        allPreviews[count].classList.add('opacity')
     }
 
 });
+
+// BONUS
+const previewContainer = document.createElement('div')
+previewContainer.classList.add('img-preview-container')
+document.querySelector('.row').append(previewContainer)
+
+for(let i=0; i<images.length; i++){
+    const previewImg =   `<div class="img-preview">
+                            <img src="${images[i]['image']}" alt="">
+                          </div>`  
+    previewContainer.innerHTML += previewImg           
+};
+const allPreviews = document.querySelectorAll('.img-preview')
+allPreviews[0].classList.add('opacity')
