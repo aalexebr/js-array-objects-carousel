@@ -36,8 +36,10 @@ for(let i=0; i<images.length; i++){
                 </div>`;
     document.querySelector('.img-position').innerHTML += box            
 };
+
 const allBoxes = document.querySelectorAll('.box')
 allBoxes[0].classList.add('display')
+
 const down = document.getElementById('down');
 let count = 0
 down.addEventListener('click', function(){
@@ -47,11 +49,12 @@ down.addEventListener('click', function(){
         count++
         allBoxes[count].classList.add('display')
     }
-    else if(count == images.length){
+    else if(count == images.length-1){
         allBoxes[images.length-1].classList.remove('display')
         count = 0
         allBoxes[count].classList.add('display')
     }
+    console.log(count)
 });
 
 const up = document.getElementById('up');
