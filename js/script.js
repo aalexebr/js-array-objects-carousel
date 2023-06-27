@@ -46,7 +46,9 @@ down.addEventListener('click', function(){
         count++
         allBoxes[count].classList.add('display')
     }
-    else if(count=images.length){
+    else if(count = images.length){
+        allBoxes[images.length-1].classList.remove('display')
         count = 0
+        allBoxes[count].classList.add('display')
     }
 });
